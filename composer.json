@@ -1,0 +1,21 @@
+{
+    "name": "openhaus/laravel-easy-faq",
+    "description": "Easy to use FAQ package for Laravel",
+    "type": "library",
+    "require": {
+        "artesaos/seotools": "^0.17.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabio",
+            "email": "info1@open-haus.de"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "OpenHaus\\LaravelEasyFaq\\": "src/"
+        }
+    }
+}
