@@ -16,7 +16,6 @@ class FaqServiceProvider extends ServiceProvider
     {
         $this->registerRoutes();
 
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->loadViewsFrom(__DIR__ . '/../views', 'laravel-easy-faq');
         $this->loadTranslationsFrom(__DIR__ . '/../lang/de', 'laravel-easy-faq');
     }
@@ -46,8 +45,8 @@ class FaqServiceProvider extends ServiceProvider
         ], 'nova');
 
         $this->publishes([
-            __DIR__.'/../database/migrations/create_faqs_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_faqs_table.php'),
-            __DIR__.'/../database/migrations/create_faq_categories_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_faq_categories_table.php'),
+            __DIR__.'/../stubs/migrations/create_faqs_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_faqs_table.php'),
+            __DIR__.'/../stubs/migrations/create_faq_categories_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_faq_categories_table.php'),
         ], 'migrations');
     }
 
