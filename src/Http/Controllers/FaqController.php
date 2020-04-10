@@ -5,6 +5,8 @@ namespace OpenHaus\LaravelEasyFaq\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use OpenHaus\LaravelEasyFaq\Models\Faq;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use SEO;
 
 class FaqController extends Controller
 {
