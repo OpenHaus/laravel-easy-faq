@@ -20,7 +20,7 @@ class Faq extends Resource
      *
      * @var string
      */
-    public static $model = 'podcaster\Models\Faq';
+    public static $model = 'OpenHaus\LaravelEasyFaq\Models\Faq';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -66,7 +66,7 @@ class Faq extends Resource
             Trix::make('Answer')
                 ->withFiles('public'),
 
-            Select::make('Category', 'category_id')
+            Select::make('Category', 'faq_category_id')
                 ->options($categories)
                 ->displayUsingLabels()
                 ->sortable(),
@@ -81,26 +81,11 @@ class Faq extends Resource
                 ->step(1)
                 ->sortable(),
 
-            Boolean::make('Hidden', 'is_hidden')
+            Boolean::make('Is Public')
                 ->trueValue(1)
                 ->falseValue(0)
                 ->hideFromIndex()
                 ->sortable(),
-
-            Date::make('Date created', 'date_created')
-                ->withMeta([
-                    'value' => $this->date_created ?: Carbon::now()
-                ])
-                ->hideFromIndex()
-                ->hideWhenCreating()
-                ->hideWhenUpdating(),
-
-            Date::make('Last updated', 'last_updated')
-                ->withMeta([
-                    'value' =>  $this->last_updated ?: Carbon::now()
-                ])
-                ->hideFromIndex()
-                ->hideWhenUpdating(),
         ];
     }
 

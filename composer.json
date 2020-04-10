@@ -1,6 +1,6 @@
 {
     "name": "openhaus/laravel-easy-faq",
-    "description": "Easy to use FAQ package for Laravel with Nova administration",
+    "description": "Easy to use SEO-optimized FAQ package for Laravel with Nova administration, search and categories",
     "keywords": ["laravel", "package", "faq"],
     "homepage": "https://commonmark.thephpleague.com",
     "type": "library",

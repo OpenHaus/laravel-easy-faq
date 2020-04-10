@@ -41,7 +41,7 @@ class FaqServiceProvider extends ServiceProvider
         ], 'views');
 
         $this->publishes([
-            __DIR__ . '/app/Nova' => base_path('app/Nova'),
+            __DIR__ . '/Nova' => base_path('app/Nova'),
         ], 'nova');
 
         $this->publishes([
