@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenHaus\LaravelEasyFaq\Providers;
+namespace OpenHaus\LaravelEasyFaq;
 
 use Illuminate\Support\ServiceProvider;
 
