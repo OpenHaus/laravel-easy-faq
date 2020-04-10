@@ -2,6 +2,7 @@
 
 namespace OpenHaus\LaravelEasyFaq;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class FaqServiceProvider extends ServiceProvider
@@ -13,7 +14,8 @@ class FaqServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadRoutesFrom(__DIR__.'/Http/routes.php');
+        $this->registerRoutes();
+
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->loadViewsFrom(__DIR__ . '/../views', 'laravel-easy-faq');
         $this->loadTranslationsFrom(__DIR__ . '/../lang/de', 'laravel-easy-faq');
@@ -47,5 +49,29 @@ class FaqServiceProvider extends ServiceProvider
             __DIR__.'/../database/migrations/create_faqs_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_faqs_table.php'),
             __DIR__.'/../database/migrations/create_faq_categories_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_faq_categories_table.php'),
         ], 'migrations');
+    }
+
+    /**
+     * Register the package routes.
+     *
+     * @return void
+     */
+    private function registerRoutes()
+    {
+        Route::group($this->routeConfiguration(), function () {
+            $this->loadRoutesFrom(__DIR__.'/Http/routes.php');
+        });
+    }
+
+    /**
+     * Get the Telescope route group configuration array.
+     *
+     * @return array
+     */
+    private function routeConfiguration()
+    {
+        return [
+            'namespace' => 'OpenHaus\LaravelEasyFaq\Http\Controllers',
+        ];
     }
 }
