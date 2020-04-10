@@ -46,4 +46,20 @@ class Faq extends Model
 		'likes',
 		'dislikes'
 	];
+
+    protected $attributes = [
+        'likes' => 0,
+        'dislikes' => 0,
+        'is_public' => true,
+    ];
+
+    /**
+     * Faq constructor.
+     */
+    public function __construct()
+    {
+        static::created(function(Faq $faq) {});
+    }
+
+
 }
