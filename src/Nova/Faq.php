@@ -1,6 +1,6 @@
 <?php
 
-namespace podcaster\Nova;
+namespace App\Nova;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
