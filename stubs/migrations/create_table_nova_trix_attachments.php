@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNovaTrixAttachments extends Migration
+class CreateTableNovaTrixAttachments extends Migration
 {
 	/**
 	 * Run the migrations.
