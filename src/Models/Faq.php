@@ -54,12 +54,19 @@ class Faq extends Model
     ];
 
     /**
-     * Faq constructor.
+     * The "booting" method of the model.
+     *
+     * @return void
      */
-    public function __construct()
+    protected static function boot()
     {
-        static::created(function(Faq $faq) {});
-    }
+        parent::boot();
 
+        // auto-sets values on creation
+        static::creating(function ($query) {
+            $query->likes = $query->likes ?? 0;
+            $query->dislikes = $query->dislikes ?? 0;
+        });
+    }
 
 }
