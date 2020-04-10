@@ -4,7 +4,7 @@
  *
  */
 
-namespace App\Models;
+namespace OpenHaus\LaravelEasyFaq\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

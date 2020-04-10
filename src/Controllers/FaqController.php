@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace OpenHaus\LaravelEasyFaq\Http\Controllers;
 
 use App\Models\Faq;
 use Illuminate\Http\Request;

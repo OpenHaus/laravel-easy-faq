@@ -1,11 +1,13 @@
 {
     "name": "openhaus/laravel-easy-faq",
-    "description": "Easy to use FAQ package for Laravel",
+    "description": "Easy to use FAQ package for Laravel with Nova administration",
+    "keywords": ["laravel", "package", "faq"],
+    "homepage": "https://commonmark.thephpleague.com",
     "type": "library",
+    "license": "MIT",
     "require": {
         "artesaos/seotools": "^0.17.2"
     },
-    "license": "MIT",
     "authors": [
         {
             "name": "Fabio",
@@ -16,6 +18,16 @@
     "autoload": {
         "psr-4": {
             "OpenHaus\\LaravelEasyFaq\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OpenHaus\\LaravelEasyFaq\\FaqServiceProvider"
+            ],
+            "aliases": {
+                "Faq": "OpenHaus\\LaravelEasyFaq\\Facades\\Faq"
+            }
         }
     }
 }
