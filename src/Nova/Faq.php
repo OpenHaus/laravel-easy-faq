@@ -48,9 +48,9 @@ class Faq extends Resource
      */
     public function fields(Request $request)
     {
-        $categories = array_combine(range(1,8), range(1,8));
+        $categories = array_combine(range(1,3), range(1,3));
         array_walk($categories, function(&$item, $key) {
-            $item = trans_choice('faq.categories', $key);
+            $item = trans_choice('laravel-easy-faq::faq.categories', $key);
         });
 
         return [

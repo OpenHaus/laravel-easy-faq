@@ -12,7 +12,7 @@ return [
     'link_view_all' => 'Alle ansehen',
     'header_browse_articles' => 'Fragen nach Kategorien durchstöbern',
     'header_popular_articles' => 'Beliebte Fragen nach Kategorie',
-    'categories' => '{1} Allgemeines',
+    'categories' => '{1} Allgemeines|{2} Produkt|{3} Konto',
     'header_answer_not_found' => 'Nicht gefunden, wonach du gesucht hast?',
     'questions_welcome' => 'Wir freuen uns immer über Deine Fragen und ergänzen die FAQ gerne.',
     'contact_support' => 'Kontaktiere den Support',

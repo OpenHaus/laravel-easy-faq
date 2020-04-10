@@ -15,11 +15,11 @@
                             <!--end of col-->
                             <div class="col">
                                 <input class="form-control form-control-lg form-control-borderless" type="search" name="q"
-                                       placeholder="{{trans('faq.placeholder_search')}}" value="{{ $query }}" required />
+                                       placeholder="{{trans('laravel-easy-faq::faq.placeholder_search')}}" value="{{ $query }}" required />
                             </div>
                             <!--end of col-->
                             <div class="col-auto">
-                                <button class="btn btn-lg btn-success" type="submit">{{trans('faq.button_search')}}</button>
+                                <button class="btn btn-lg btn-success" type="submit">{{trans('laravel-easy-faq::faq.button_search')}}</button>
                             </div>
                             <!--end of col-->
                         </div>
@@ -38,8 +38,8 @@
         <div class="container">
             <div class="row justify-content-center mb-2">
                 <div class="col-auto">
-                    <h1 class="h1">{{--<i class="icon-{{ $aFaq[0]->getCategoryAttributes($id)['icon'] }} text-{{ $aFaq[0]->getCategoryAttributes($id)['color'] }} display-4"></i>--}} {{trans_choice('faq.categories', $id)}}</h1>
-                    {{--<h2 class="h5">{{ trans('faq.title_seo_category', ['name' => trans_choice('faq.categories', ['id' => $id])]) }}</h2>--}}
+                    <h1 class="h1">{{--<i class="icon-{{ $aFaq[0]->getCategoryAttributes($id)['icon'] }} text-{{ $aFaq[0]->getCategoryAttributes($id)['color'] }} display-4"></i>--}} {{trans_choice('laravel-easy-faq::faq.categories', $id)}}</h1>
+                    {{--<h2 class="h5">{{ trans('laravel-easy-faq::faq.title_seo_category', ['name' => trans_choice('laravel-easy-faq::faq.categories', ['id' => $id])]) }}</h2>--}}
                 </div>
                 <!--end of col-->
             </div>

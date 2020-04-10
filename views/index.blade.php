@@ -5,8 +5,8 @@
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-auto text-center">
-                    <h1 class="">{{trans('faq.subheader_faq')}}</h1>
-                    <span class="">{{trans('faq.header_faq')}}</span>
+                    <h1 class="">{{trans('laravel-easy-faq::faq.subheader_faq')}}</h1>
+                    <span class="">{{trans('laravel-easy-faq::faq.header_faq')}}</span>
                 </div>
                 <!--end of col-->
             </div>
@@ -21,11 +21,11 @@
                             <!--end of col-->
                             <div class="col">
                                 <input class="form-control form-control-lg form-control-borderless" type="search" name="q"
-                                       placeholder="{{trans('faq.placeholder_search')}}" required />
+                                       placeholder="{{trans('laravel-easy-faq::faq.placeholder_search')}}" required />
                             </div>
                             <!--end of col-->
                             <div class="col-auto">
-                                <button class="btn btn-lg btn-success" type="submit">{{trans('faq.button_search')}}</button>
+                                <button class="btn btn-lg btn-success" type="submit">{{trans('laravel-easy-faq::faq.button_search')}}</button>
                             </div>
                             <!--end of col-->
                         </div>
@@ -42,7 +42,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-auto">
-                    <h3 class="h4">{{trans('faq.header_browse_articles')}}</h3>
+                    <h3 class="h4">{{trans('laravel-easy-faq::faq.header_browse_articles')}}</h3>
                 </div>
                 <!--end of col-->
             </div>
@@ -53,10 +53,10 @@
 
                         @foreach($aCategories as $id => $attr)
                         <li class="col-6 col-md-4">
-                            <a class="card text-center" href="{{ route('faq.category', ['id' => $id, 'slug' => Str::slug(trans_choice('faq.categories', $id))]) }}">
+                            <a class="card text-center" href="{{ route('faq.category', ['id' => $id, 'slug' => Str::slug(trans_choice('laravel-easy-faq::faq.categories', $id))]) }}">
                                 <div class="card-body">
                                     <i class="icon-{{ $attr['icon'] }} text-{{ $attr['color'] }} display-4"></i>
-                                    <h6 class="">{{ trans_choice('faq.categories', $id) }}</h6>
+                                    <h6 class="">{{ trans_choice('laravel-easy-faq::faq.categories', $id) }}</h6>
                                 </div>
                             </a>
                         </li>
@@ -75,7 +75,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-auto">
-                    <h3 class="h4">{{trans('faq.header_popular_articles')}}</h3>
+                    <h3 class="h4">{{trans('laravel-easy-faq::faq.header_popular_articles')}}</h3>
                 </div>
                 <!--end of col-->
             </div>
@@ -87,10 +87,10 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
                             <div>
-                                <span class="h6">{{ trans_choice('faq.categories', $id) }}</span>
+                                <span class="h6">{{ trans_choice('laravel-easy-faq::faq.categories', $id) }}</span>
                                 {{--<span class="badge badge-secondary">3</span>--}}
                             </div>
-                            <a href="{{ route('faq.category', ['id' => $id, 'slug' => Str::slug(trans_choice('faq.categories', $id))]) }}">{{trans('faq.link_view_all')}} &rsaquo;</a>
+                            <a href="{{ route('faq.category', ['id' => $id, 'slug' => Str::slug(trans_choice('laravel-easy-faq::faq.categories', $id))]) }}">{{trans('laravel-easy-faq::faq.link_view_all')}} &rsaquo;</a>
                         </div>
                         <div class="card-body">
                             <ul class="list-unstyled list-spacing-sm">
@@ -112,9 +112,9 @@
             <!--end of row-->
             <div class="row justify-content-center text-center section-outro">
                 <div class="col-lg-4 col-md-5">
-                    <h6>{{ trans('faq.header_answer_not_found') }}</h6>
-                    <p>{{ trans('faq.questions_welcome') }}</p>
-                    <a href="">{{ trans('faq.contact_support') }} &rsaquo;</a>
+                    <h6>{{ trans('laravel-easy-faq::faq.header_answer_not_found') }}</h6>
+                    <p>{{ trans('laravel-easy-faq::faq.questions_welcome') }}</p>
+                    <a href="">{{ trans('laravel-easy-faq::faq.contact_support') }} &rsaquo;</a>
                 </div>
                 <!--end of col-->
             </div>

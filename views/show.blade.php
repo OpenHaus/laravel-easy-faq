@@ -15,11 +15,11 @@
                             <!--end of col-->
                             <div class="col">
                                 <input class="form-control form-control-lg form-control-borderless" type="search" name="q"
-                                       placeholder="{{trans('faq.placeholder_search')}}" value="{{ $query }}" required />
+                                       placeholder="{{trans('laravel-easy-faq::faq.placeholder_search')}}" value="{{ $query }}" required />
                             </div>
                             <!--end of col-->
                             <div class="col-auto">
-                                <button class="btn btn-lg btn-success" type="submit">{{trans('faq.button_search')}}</button>
+                                <button class="btn btn-lg btn-success" type="submit">{{trans('laravel-easy-faq::faq.button_search')}}</button>
                             </div>
                             <!--end of col-->
                         </div>
@@ -53,14 +53,14 @@
                         {!! $faq->answer !!}
                     </article>
                     <hr>
-                    <h5 class="mb-4">{{ trans('faq.header_likes') }}</h5>
+                    <h5 class="mb-4">{{ trans('laravel-easy-faq::faq.header_likes') }}</h5>
                     <form class="d-flex justify-content-between">
                         <div id="app" data-type="faq">
                             <faq-like-button :likes="{{ $faq->likes }}" id="{{ $faq->id }}"></faq-like-button>
                             <faq-like-button :likes="{{ $faq->dislikes }}" id="{{ $faq->id }}" type="dislike"></faq-like-button>
                         </div>
                         <div>
-                            <a href="{{ route('contactus.create') }}" class="btn btn-outline-primary">{{ trans('faq.contact_support') }}</a>
+                            <a href="{{ route('contactus.create') }}" class="btn btn-outline-primary">{{ trans('laravel-easy-faq::faq.contact_support') }}</a>
                         </div>
                     </form>
                 </div>
@@ -70,33 +70,14 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <div class="d-flex justify-content-between">
-                                    <div><i class="icon-text-document mr-1"></i> {{ trans('faq.created') }}</div>
-                                    <span>{{ $faq->date_created->diffForHumans() }}</span>
+                                    <div><i class="icon-text-document mr-1"></i> {{ trans('laravel-easy-faq::faq.created') }}</div>
+                                    <span>{{ $faq->created_at->diffForHumans() }}</span>
                                 </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="d-flex justify-content-between">
-                                    <div><i class="icon-edit mr-1"></i> {{ trans('faq.last_updated') }}</div>
-                                    <span>{{ $faq->last_updated->diffForHumans() }}</span>
-                                </div>
-                            </li>
-{{--                            <li class="list-group-item">
-                                <div class="d-flex justify-content-between">
-                                    <div><i class="icon-thumbs-up mr-1"></i> Likes</div>
-                                    <span>3</span>
-                                </div>
-                            </li>--}}
-                            <li class="list-group-item">
-                                <div class="d-flex justify-content-between">
-                                    <div><i class="icon-share mr-1"></i> {{ trans('faq.header_shares') }}</div>
-                                    {{--<span>{{ $faq->shares ?? 0 }}</span>--}}
-                                    {!!
-                                        \Jorenvh\Share\ShareFacade::page(url()->current(), $faq->question, null, '<ul class="list-group list-group-horizontal list-group-flush list-group-shares">', '</ul>')
-                                        ->facebook()
-                                        ->twitter()
-                                        ->linkedin($faq->answer)
-                                        ->whatsapp();
-                                    !!}
+                                    <div><i class="icon-edit mr-1"></i> {{ trans('laravel-easy-faq::faq.last_updated') }}</div>
+                                    <span>{{ $faq->updated_at->diffForHumans() }}</span>
                                 </div>
                             </li>
                         </ul>
@@ -104,10 +85,10 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
                             <div>
-                                <span class="h6">{{trans_choice('faq.categories', $faq->faq_category_id)}}</span>
+                                <span class="h6">{{trans_choice('laravel-easy-faq::faq.categories', $faq->faq_category_id)}}</span>
                                 <span class="badge badge-secondary">{{ $cFaq }}</span>
                             </div>
-                            <a href="{{ route('faq.category', ['id' => $faq->faq_category_id, 'slug' => Str::slug(trans_choice('faq.categories', $faq->faq_category_id))]) }}">{{ trans('faq.link_view_all') }} &rsaquo;</a>
+                            <a href="{{ route('faq.category', ['id' => $faq->faq_category_id, 'slug' => Str::slug(trans_choice('laravel-easy-faq::faq.categories', $faq->faq_category_id))]) }}">{{ trans('laravel-easy-faq::faq.link_view_all') }} &rsaquo;</a>
                         </div>
                         <div class="card-body">
                             <ul class="list-unstyled list-spacing-sm">
@@ -123,15 +104,15 @@
                     <!--end of card-->
                     <div class="card">
                         <div class="card-header">
-                            <span class="h6">{{ trans('faq.header_categories') }}</span>
+                            <span class="h6">{{ trans('laravel-easy-faq::faq.header_categories') }}</span>
                         </div>
                         <div class="list-group list-group-flush">
 
                             @foreach($faq->getCategories() as $id => $attr)
-                            <a class="list-group-item d-flex justify-content-between" href="{{ route('faq.category', ['id' => $id, 'slug' => Str::slug(trans_choice('faq.categories', $id))]) }}">
+                            <a class="list-group-item d-flex justify-content-between" href="{{ route('faq.category', ['id' => $id, 'slug' => Str::slug(trans_choice('laravel-easy-faq::faq.categories', $id))]) }}">
                                 <div>
                                     <i class="icon-{{ $attr['icon'] }} text-{{ $attr['color'] }} mr-1"></i>
-                                    <span>{{ trans_choice('faq.categories', $id) }}</span>
+                                    <span>{{ trans_choice('laravel-easy-faq::faq.categories', $id) }}</span>
                                 </div>
                                 <div>
                                     <i class="icon-chevron-right"></i>
@@ -150,32 +131,3 @@
     </section>
     <!--end of section-->
 @endsection
-
-<script>
-    let useShare = function(link) {
-        let popupSize = {
-            width: 780,
-            height: 550
-        };
-
-        let w=window,
-            d=document,
-            e=d.documentElement,
-            g=d.getElementsByTagName('body')[0],
-            x=w.innerWidth||e.clientWidth||g.clientWidth,
-            y=w.innerHeight||e.clientHeight||g.clientHeight;
-
-        let verticalPos = Math.floor((x - popupSize.width) / 2),
-            horisontalPos = Math.floor((y - popupSize.height) / 2);
-
-        let popup = window.open(link, 'social',
-            'width=' + popupSize.width + ',height=' + popupSize.height +
-            ',left=' + verticalPos + ',top=' + horisontalPos +
-            ',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1');
-
-        if (popup) {
-            popup.focus();
-        }
-        return false;
-    };
-</script>

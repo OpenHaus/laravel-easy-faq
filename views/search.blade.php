@@ -15,11 +15,11 @@
                             <!--end of col-->
                             <div class="col">
                                 <input class="form-control form-control-lg form-control-borderless" type="search" name="q"
-                                       placeholder="{{trans('faq.placeholder_search')}}" value="{{ $query }}" required />
+                                       placeholder="{{trans('laravel-easy-faq::faq.placeholder_search')}}" value="{{ $query }}" required />
                             </div>
                             <!--end of col-->
                             <div class="col-auto">
-                                <button class="btn btn-lg btn-success" type="submit">{{trans('faq.button_search')}}</button>
+                                <button class="btn btn-lg btn-success" type="submit">{{trans('laravel-easy-faq::faq.button_search')}}</button>
                             </div>
                             <!--end of col-->
                         </div>
@@ -36,7 +36,7 @@
         <div class="container">
             <div class="row justify-content-center mb-1">
                 <div class="col-auto">
-                    <h1 class="h1">{{ trans('faq.search_results') }}</h1>
+                    <h1 class="h1">{{ trans('laravel-easy-faq::faq.search_results') }}</h1>
                 </div>
                 <!--end of col-->
             </div>
@@ -54,13 +54,13 @@
                             <i class="icon-text-document text-muted mr-1"></i>
                             <a href="{{ route('faq.show', ['id' => $faq->id, 'slug' => Str::slug($faq->question)]) }}" class="">{{ $faq->question }}</a>
                             <p>
-                                <span class="text-{{ $faq->getCategoryAttributes($faq->faq_category_id)['color'] }}">{{ trans_choice('faq.categories', $faq->faq_category_id) }}</span>
+                                <span class="text-{{ $faq->getCategoryAttributes($faq->faq_category_id)['color'] }}">{{ trans_choice('laravel-easy-faq::faq.categories', $faq->faq_category_id) }}</span>
                                 {!! Str::limit(strip_tags($faq->answer), $limit = 300, $end = ' ...') !!}
                             </p>
                         </li>
                     @empty
                         <li>
-                            {{ trans('faq.search_no_results', ['query' => $query]) }}
+                            {{ trans('laravel-easy-faq::faq.search_no_results', ['query' => $query]) }}
                         </li>
                     @endforelse
                 </ul>
