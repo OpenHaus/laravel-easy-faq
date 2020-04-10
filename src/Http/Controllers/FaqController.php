@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenHaus\LaravelEasyFaq\Controllers;
+namespace OpenHaus\LaravelEasyFaq\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use OpenHaus\LaravelEasyFaq\Models\Faq;
