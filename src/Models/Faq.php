@@ -53,6 +53,8 @@ class Faq extends Model
         'is_public' => true,
     ];
 
+    private $categories = [];
+
     /**
      * The "booting" method of the model.
      *
@@ -69,4 +71,8 @@ class Faq extends Model
         });
     }
 
+    public function getCategories()
+    {
+        return $this->categories;
+    }
 }
