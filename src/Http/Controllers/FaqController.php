@@ -19,7 +19,7 @@ class FaqController extends Controller
     {
         SEO::setTitle(trans('faq.title_seo_faq'));
 
-        $aFaq = DB::select(DB::raw('select id, faq_category_id, question, likes from ( select id, faq_category_id, question, likes, (@rn:=if(@prev = category_id, @rn +1, 1)) as rownumb, @prev:= faq_category_id from ( select id, faq_category_id, question, likes from faq order by faq_category_id ,  likes desc, id ) as sortedlist JOIN (select @prev:=NULL, @rn :=0) as vars ) as groupedlist where rownumb<=3 order by faq_category_id, likes desc, id'));
+        $aFaq = DB::select(DB::raw('select id, faq_category_id, question, likes FROM ( select id, faq_category_id, question, likes, (@rn:=if(@prev = category_id, @rn +1, 1)) as rownumb, @prev:= faq_category_id FROM ( select id, faq_category_id, question, likes FROM faqs order by faq_category_id ,  likes desc, id ) as sortedlist JOIN (select @prev:=NULL, @rn :=0) as vars ) as groupedlist where rownumb<=3 order by faq_category_id, likes desc, id'));
 
         $aSorted = [];
 
@@ -67,7 +67,10 @@ class FaqController extends Controller
     public function show($id)
     {
         $faq = Faq::findOrFail($id);
-        $aFaq = Faq::where('faq_category_id', '=', $faq->faq_category_id)->where('id', '!=', $faq->id)->orderBy('likes', 'desc')->get();
+        $aFaq = Faq::where('faq_category_id', '=', $faq->faq_category_id)
+            ->where('id', '!=', $faq->id)
+            ->orderBy('likes', 'desc')
+            ->get();
         $cFaq = $aFaq->count()+1;
 
         SEO::setTitle($faq->question);
